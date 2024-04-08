@@ -34,7 +34,7 @@ const[flag,Setflag]= useState("hidden");
          </svg>
        </div>
 
-       <div className={`${flag} fixed left-0 right-0 top-0  min-h-96  overflow-hidden bg-teal-100 flex flex-col justify-between  `}>
+       <div className={`${flag} fixed z-10 left-0 right-0 top-0  min-h-96  overflow-hidden bg-teal-100 flex flex-col justify-between  `}>
            <div className=" flex flex-col">
             <span className=" flex justify-end p-5 " >
              <svg onClick={(e)=>{handleflag('hidden')}} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 me-2">
@@ -44,7 +44,7 @@ const[flag,Setflag]= useState("hidden");
         <Link to ='/'  onClick={(e)=>handlescroll(0)} className=" text-center  hover:bg-rose-500 py-2 hover:text-white">Home</Link>
         <span onClick={(e)=>handlescroll(900)}  className="text-center  hover:bg-rose-500 py-2 hover:text-white">Our Members</span>
         <span onClick={(e)=>handlescroll(3600)} className="text-center  hover:bg-rose-500 py-2 hover:text-white">About Developer</span>
-        <Link to="PrivacyPolicy" className="text-center  hover:bg-rose-500 py-2 hover:text-white">Privacy policy </Link>
+        <Link to="PrivacyPolicy" onClick={(e)=>{handleflag('hidden')}}  className="text-center  hover:bg-rose-500 py-2 hover:text-white">Privacy policy </Link>
         </div>
          <div className="w-full h-2  bg-red-400 "></div>
         </div>

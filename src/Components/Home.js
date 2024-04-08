@@ -1,5 +1,3 @@
-import React, { useRef, useState } from 'react'
-
 import image from './vedio_calling_phone_image-removebg-preview.png'
 import image2 from './sumitpatel.png'
 import Avtar1 from'./Avtar1.png'
@@ -11,51 +9,10 @@ import Step2 from './Step2.png'
 import Step3  from './Step3.png'
 import Arrow from './RightArrow.png'
 import DownArrow from './DownArrow.png'
-import mencut from './man_cut_image-removebg-preview.png'
 import rohitphoto from './RohitPhoto.jpeg'
-import axios from "axios";
+
 export default function Home() {
-  const confirm = useRef();
-  
-  
-  let[credential,Setcredential]=useState(
-    {
-      username:"",
-      password:"",
-      
-    }
-
-  )
-  
-
-// api calling 
-function apicalling(event)
-{ event.preventDefault()
-  let apiurl='https://bytebond.up.railway.app/api/auth/login'
- axios.post(apiurl,{
-  username:credential.username,
-  password:credential.password
- },
- {timeout: 10000}
-).then(
-  (response)=>{
-    axios.delete(`https://bytebond.up.railway.app/api/User/Delete/${response.id}`).then(
-
-    (response)=>{
-      console.log(response.data);
-      confirm.current.innerHTML="Deleted Successfully";
-    }
-    )
-  }
-   
-).catch((error)=>{
-  console.log(error);
- }) 
-
  
-}
-  
-
 
   return (
     <> 
@@ -239,33 +196,7 @@ function apicalling(event)
 
 
              
-                {/* Account Deletion Section */}
-                <div className=" w-[100%]  bg-blue-700 ">
-            <div className=" mx-auto w-[100%] mobile:max-w-[540px] ipadmini:max-w-[768px] ipadair:max-w-[960px] laptop:max-w-[1240px] py-6  ">
-                
-                <div className=" flex flex-wrap ipadmini:flex-row flex-col justify-center items-center">
-
-                    <div className=" relative flex justify-center items-center ipadmini:w-1/2">
-                      <div className="h-80 w-80 rounded-full border-2 border-dashed animate-spin"></div>
-                      <img src={mencut} alt="" className="absolute top-22 laptop:left-40 left-10  h-96 w-96" />
-                    </div>
-                       {/* right side */}
-                    <div className=" flex justify-center items-center flex-col gap-y-10 ipadmini:w-1/2">
-                    <h1 className=' text-2xl font-bold text-white'>Do You Want to Delete Your Account </h1>
-                    <form onSubmit={apicalling} className=" flex flex-col justify-center items-center gap-y-5 ">
-                        <input type="email" className=" focus:outline-none py-1 px-1 h-12 w-64 border border-sky-600 bg-blue-200  placeholder-gray-950 " placeholder=' Enter valid email' onChange={(event)=>Setcredential((prev) => ({ ...prev, username: event.target.value }))}/>
-                        <input type="password" className=" focus:outline-none py-1 px-1 h-12 w-64 border border-sky-600 bg-blue-200  placeholder-gray-950 " placeholder=' Enter Password'onChange={(event)=>Setcredential((prev)=>({...prev,password:event.target.value}))}/>
-                        <button className="border py-1 px-4 ms-4 border-blue-900 rounded bg-white font-medium" type='submit'>Send Request</button>
-                        <div className=" text-white text-lg italic" ref={confirm}></div>
-                
-                      
-                    </form>
-                    </div>
-                </div>
-
-
-                </div>
-                </div>
+              
     </>
   )
 }

@@ -1,8 +1,10 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function PrivacyPolicy() {
+  
   return (
-    <div>
+    <div className='p-10'>
       <h1>Privacy Policy</h1>
 <p>Last updated: March 24, 2024</p>
 <p>This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.</p>
@@ -162,7 +164,11 @@ export default function PrivacyPolicy() {
 <p>By email: bytebond.app@gmail.com</p>
 </li>
 <li>
-<p>By phone number: 6263967384</p>
+  <div className="flex flex-wrap flex-row justify-between p-2">
+  <p>By phone number: 6263967384</p>
+  <Link to='Delete' className="text-blue-700 underline">You may Delete your Account</Link>
+  </div>
+
 </li>
 </ul>
     </div>
