@@ -17,7 +17,7 @@ function App() {
     <Routes>
       <Route path='/' element={<Home/>}></Route>
       <Route path='/PrivacyPolicy' element={<PrivacyPolicy/>}></Route>
-      <Route path='/PrivacyPolicy/Delete' element={<DeleteAccount/>}></Route>
+      <Route path='/Delete' element={<DeleteAccount/>}></Route>
       
     </Routes>
    

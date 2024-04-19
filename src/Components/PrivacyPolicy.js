@@ -166,7 +166,7 @@ export default function PrivacyPolicy() {
 <li>
   <div className="flex flex-wrap flex-row justify-between p-2">
   <p>By phone number: 6263967384</p>
-  <Link to='Delete' className="text-blue-700 underline">You may Delete your Account</Link>
+  <Link to='/Delete' className="text-blue-700 underline">You may Delete your Account</Link>
   </div>
 
 </li>
