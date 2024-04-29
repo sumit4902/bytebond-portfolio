@@ -20,7 +20,7 @@ export default function DeleteAccount() {
   // api calling 
   function apicalling(event)
   { event.preventDefault()
-    let apiurl='http://Test-env.eba-8minev3m.ap-south-1.elasticbeanstalk.com/api/auth/login'
+    let apiurl='https://Test-env.eba-8minev3m.ap-south-1.elasticbeanstalk.com/api/auth/login'
    axios.post(apiurl,{
     username:credential.username,
     password:credential.password
@@ -33,7 +33,7 @@ export default function DeleteAccount() {
      
       if(response.data!=='Invalid Username or Password  !!'){
         console.log("delete Api called")
-        axios.delete(`http://Test-env.eba-8minev3m.ap-south-1.elasticbeanstalk.com/api/User/Delete/${response.data.id}`, {
+        axios.delete(`https://Test-env.eba-8minev3m.ap-south-1.elasticbeanstalk.com/api/User/Delete/${response.data.id}`, {
           headers: {
               "Authorization": `Bearer ${response.data.jwtToken}`
           }
